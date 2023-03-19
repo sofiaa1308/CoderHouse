@@ -1,0 +1,27 @@
+CREATE TABLE leads (
+idlead int,
+idcar int
+);
+
+CREATE TABLE stock (
+idcar int,
+color varchar(50),
+transmision varchar(50)
+);
+
+CREATE TABLE vistas (
+idvisita int,
+site varchar(50),
+idasesor varchar(50)
+);
+
+CREATE TABLE equipo_comercial (
+idasesor int,
+sales int,
+fecha_ingreso date
+);
+
+CREATE TABLE ventas (
+idcar int,
+price_sale float
+);
