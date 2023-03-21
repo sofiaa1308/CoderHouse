@@ -1,27 +1,32 @@
-CREATE TABLE leads (
-idlead int,
-idcar int
+CREATE TABLE LEADS (
+IDLEAD INT NOT NULL,
+IDCAR INT NOT NULL,
+PRIMARY KEY(idlead)
 );
 
-CREATE TABLE stock (
-idcar int,
-color varchar(50),
-transmision varchar(50)
+CREATE TABLE STOCK (
+IDCAR INT NOT NULL,
+COLOR VARCHAR(50) NOT NULL,
+TRANSMISION VARCHAR(50) NOT NULL,
+PRIMARY KEY(IDCAR)
 );
 
-CREATE TABLE vistas (
-idvisita int,
-site varchar(50),
-idasesor varchar(50)
+CREATE TABLE VITAS (
+IDVISITA INT,
+SITE VARCHAR(50),
+IDASESOR VARCHAR(50)
+PRIMARY KEY(IDVISITA)
 );
 
-CREATE TABLE equipo_comercial (
-idasesor int,
-sales int,
-fecha_ingreso date
+CREATE TABLE EQUIPO_COMERCIAL (
+IDASESOR INT,
+SALES INT,
+FECHA_INGRESO DATE
+PRIMARY KEY(IDASESOR)
 );
 
-CREATE TABLE ventas (
-idcar int,
-price_sale float
+CREATE TABLE VENTAS (
+IDCAR INT,
+PRICE_SALE FLOAT
+PRIMARY KEY(IDCAR)
 );
