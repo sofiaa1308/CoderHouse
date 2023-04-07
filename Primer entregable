@@ -1,13 +1,13 @@
 CREATE TABLE STOCK (
-IDCAR INT NOT NULL,
+IDCAR VARCHAR(100),
 COLOR VARCHAR(50) NOT NULL,
 TRANSMISION VARCHAR(50) NOT NULL,
 PRIMARY KEY(idcar)
 );
 
 CREATE TABLE LEADS (
-idlead INT NOT NULL,
-idcar INT NOT NULL,
+idlead varchar(100),
+idcar varchar(100),
 PRIMARY KEY(idlead),
 FOREIGN KEY (idcar) references STOCK(idcar)
 );
@@ -31,7 +31,7 @@ FOREIGN KEY (idasesor) references Equipo_comercial(idasesor)
 CREATE TABLE VENTAS (
 idventa int,
 PRICE_SALE FLOAT,
-idcar INT,
+idcar VARCHAR(100),
 PRIMARY KEY (idventa),
 FOREIGN KEY (idcar) references STOCK (idcar)
 );
