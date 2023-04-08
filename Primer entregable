@@ -1,9 +1,68 @@
+create schema if not exists	tablas_proyecto_final;
+use tablas_proyecto_final;
+
 CREATE TABLE STOCK (
-IDCAR VARCHAR(100),
+IDCAR varchar(100),
 COLOR VARCHAR(50) NOT NULL,
 TRANSMISION VARCHAR(50) NOT NULL,
 PRIMARY KEY(idcar)
 );
+
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FYgHlQAL','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZ9CZQA1','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZANxQAP','GRIS','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZCFMQA5','BLANCO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZcXcQAL','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZd6rQAD','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZeQdQAL','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZI1aQAH','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZiazQAD','BLANCO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZIx0QAH','Plateado','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZKn3QAH','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZLAbQAP','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZLJ8QAH','Plateado','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZnOyQAL','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZofbQAD','NEGRO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZPNKQA5','Azul','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZQS6QAP','NEGRO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZU1xQAH','GRIS','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002FZUCCQA5','Plateado','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GvlefQAB','ROJO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GvrJ0QAJ','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GvsFOQAZ','GRIS','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GvsLRQAZ','Azul','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gw4nhQAB','Plateado','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gw8cYQAR','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gw9LdQAJ','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwBGuQAN','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gwe9TQAR','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwEO0QAN','ROJO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwggjQAB','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwIjqQAF','GRIS','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwKJLQA3','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwM0sQAF','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwMNNQA3','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwmokQAB',' NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwnHEQAZ','ROJO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwPUCQA3','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwQkzQAF','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwS8YQAV','GRIS','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwsfeQAB','BEIGE','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwsG0QAJ','Azul','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwsVUQAZ','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwtXbQAJ','Azul','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwvKAQAZ','BLANCO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwxgtQAB','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002GwYL9QAN','NEGRO','MecÃ¡nica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gwzj6QAB','Plateado','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx39sQAB','ROJO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx3Z7QAJ','Plateado','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx4W9QAJ','GRIS','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx7ABQAZ','NEGRO','AutomÃ¡tica');
+INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx7KMQAZ','BLANCO','AutomÃ¡tica');
+
+/*drop table stock;*/
+select * from stock;
 
 CREATE TABLE LEADS (
 idlead varchar(100),
@@ -12,12 +71,135 @@ PRIMARY KEY(idlead),
 FOREIGN KEY (idcar) references STOCK(idcar)
 );
 
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('540','0064X00002FYgHlQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('733','0064X00002FYgHlQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('926','0064X00002FYgHlQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('539','0064X00002FZ9CZQA1');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('732','0064X00002FZ9CZQA1');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('925','0064X00002FZ9CZQA1');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('538','0064X00002FZANxQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('731','0064X00002FZANxQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('924','0064X00002FZANxQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('537','0064X00002FZCFMQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('730','0064X00002FZCFMQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('923','0064X00002FZCFMQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('536','0064X00002FZcXcQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('729','0064X00002FZcXcQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('922','0064X00002FZcXcQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('535','0064X00002FZd6rQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('728','0064X00002FZd6rQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('921','0064X00002FZd6rQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('534','0064X00002FZeQdQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('727','0064X00002FZeQdQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('920','0064X00002FZeQdQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('533','0064X00002FZI1aQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('726','0064X00002FZI1aQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('919','0064X00002FZI1aQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('532','0064X00002FZiazQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('725','0064X00002FZiazQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('918','0064X00002FZiazQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('531','0064X00002FZIx0QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('724','0064X00002FZIx0QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('917','0064X00002FZIx0QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('530','0064X00002FZKn3QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('723','0064X00002FZKn3QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('916','0064X00002FZKn3QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('529','0064X00002FZLAbQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('722','0064X00002FZLAbQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('915','0064X00002FZLAbQAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('528','0064X00002FZLJ8QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('721','0064X00002FZLJ8QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('914','0064X00002FZLJ8QAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('527','0064X00002FZnOyQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('720','0064X00002FZnOyQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('913','0064X00002FZnOyQAL');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('526','0064X00002FZofbQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('719','0064X00002FZofbQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('912','0064X00002FZofbQAD');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('525','0064X00002FZPNKQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('718','0064X00002FZPNKQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('911','0064X00002FZPNKQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('524','0064X00002FZQS6QAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('717','0064X00002FZQS6QAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('910','0064X00002FZQS6QAP');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('523','0064X00002FZU1xQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('716','0064X00002FZU1xQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('909','0064X00002FZU1xQAH');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('522','0064X00002FZUCCQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('715','0064X00002FZUCCQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('908','0064X00002FZUCCQA5');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('521','0064X00002GvlefQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('714','0064X00002GvlefQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('907','0064X00002GvlefQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('520','0064X00002GvrJ0QAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('713','0064X00002GvrJ0QAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('906','0064X00002GvrJ0QAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('519','0064X00002GvsFOQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('712','0064X00002GvsFOQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('905','0064X00002GvsFOQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('518','0064X00002GvsLRQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('711','0064X00002GvsLRQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('904','0064X00002GvsLRQAZ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('517','0064X00002Gw4nhQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('710','0064X00002Gw4nhQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('903','0064X00002Gw4nhQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('516','0064X00002Gw8cYQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('709','0064X00002Gw8cYQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('902','0064X00002Gw8cYQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('515','0064X00002Gw9LdQAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('708','0064X00002Gw9LdQAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('901','0064X00002Gw9LdQAJ');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('514','0064X00002GwBGuQAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('707','0064X00002GwBGuQAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('900','0064X00002GwBGuQAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('513','0064X00002Gwe9TQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('706','0064X00002Gwe9TQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('899','0064X00002Gwe9TQAR');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('511','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('512','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('704','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('705','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('897','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('898','0064X00002GwEO0QAN');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('510','0064X00002GwggjQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('703','0064X00002GwggjQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('896','0064X00002GwggjQAB');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('509','0064X00002GwIjqQAF');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('702','0064X00002GwIjqQAF');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('895','0064X00002GwIjqQAF');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('508','0064X00002GwKJLQA3');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('701','0064X00002GwKJLQA3');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('894','0064X00002GwKJLQA3');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('507','0064X00002GwM0sQAF');
+INSERT INTO `leads` (`idlead`, `idcar`) VALUES ('700','0064X00002GwM0sQAF');
+
+
+select * from leads;
+/*drop table leads;*/
+
 CREATE TABLE EQUIPO_COMERCIAL (
 idasesor INT,
 SALES INT,
 FECHA_INGRESO DATE,
 PRIMARY KEY(IDASESOR)
 );
+
+
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (11170,27,'2023-03-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (13019,14,'2023-03-20');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (16583,37,'2023-03-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (17555,50,'2023-01-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (19607,14,'2023-03-20');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (24230,30,'2023-02-02');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (25606,50,'2023-01-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (30306,27,'2023-03-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (32704,37,'2023-03-01');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (34714,46,'2023-01-15');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (35686,46,'2023-01-15');
+INSERT INTO `equipo_comercial` (`idasesor`, `SALES`, `FECHA_INGRESO`) VALUES (47197,30,'2023-02-02');
+
+select * from equipo_comercial;
+/*drop table equipo_comercial;*/
 
 CREATE TABLE VISITAS (
 idvisita INT,
@@ -27,11 +209,39 @@ PRIMARY KEY(idvisita),
 FOREIGN KEY (idasesor) references Equipo_comercial(idasesor)
 );
 
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (201,'Lima',13019);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (228,'Lima',30306);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (240,'Lima',25606);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (343,'Lima',47197);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (358,'Lima',30306);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (378,'Lima',35686);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (381,'Lima',16583);
+
+select * from visitas;
+/*drop table visitas;*/
 
 CREATE TABLE VENTAS (
-idventa int,
+idventa varchar(55),
 PRICE_SALE FLOAT,
-idcar VARCHAR(100),
+idcar varchar(100),
 PRIMARY KEY (idventa),
 FOREIGN KEY (idcar) references STOCK (idcar)
 );
+
+/*drop table ventas;*/
+
+select * from ventas;
+
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-001B12F7',3250,'0064X00002GwtXbQAJ');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-00208197',1272,'0064X00002FZUCCQA5');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-003AA7D9',7750,'0064X00002GwIjqQAF');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-003C8A7C',5200,'0064X00002Gw8cYQAR');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-006A3D21',14040,'0064X00002GwggjQAB');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-00925A4F',2850,'0064X00002FZUCCQA5');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-00BE3F6B',12100,'0064X00002GvrJ0QAJ');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-00C993E4',23770,'0064X00002FZofbQAD');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-01532EEB',12570,'0064X00002FZQS6QAP');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-01A0910C',21670,'0064X00002FYgHlQAL');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-01A2052B',6000,'0064X00002FZLJ8QAH');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-020BC6B4',15570,'0064X00002Gwe9TQAR');
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`) VALUES ('P-0280D059',515,'0064X00002GwEO0QAN');	
