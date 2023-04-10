@@ -203,10 +203,10 @@ FOREIGN KEY (idasesor) references Equipo_comercial(idasesor)
 );
 
 INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (201,'Lima',13019);
-INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (228,'Lima',13019);
-INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (240,'Lima',13019);
-INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (343,'Lima',13019);
-INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (358,'Lima',16583);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (228,'Piura',13019);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (240,'Piura',13019);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (343,'Piura',13019);
+INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (358,'Piura',16583);
 INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (378,'Lima',16583);
 INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (381,'Lima',17555);
 
@@ -239,8 +239,7 @@ INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-0
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-01A0910C',21670,'0064X00002FYgHlQAL',13019);
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-01A2052B',6000,'0064X00002FZLJ8QAH',17555);
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-020BC6B4',15570,'0064X00002Gwe9TQAR',17555);
-INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-0280D059',515,'0064X00002GwEO0QAN',17555);
-
+INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-0280D059',515,'0064X00002GwEO0QAN',17555);	
 
 
 ##Desafío_vistas
@@ -278,3 +277,32 @@ CREATE OR REPLACE VIEW v_visitas as
 select site, count(v.idasesor) as asesores_site from visitas as v
 left join equipo_comercial as eq on v.idasesor= eq.idasesor
 group by site)
+
+#Desafío funciones
+
+#Función 1
+DROP FUNCTION modelar;
+CREATE FUNCTION modelar (valor VARCHAR(100))
+RETURNS VARCHAR(100)
+DETERMINISTIC
+RETURN(REPLACE(valor,'Ã¡','a'));
+
+select modelar(transmision) from stock;
+
+#Función 2
+drop function ventas_max_asesor;
+
+CREATE FUNCTION ventas_max_asesor (valorf INT)
+RETURNS float
+deterministic
+return(
+select count(idventa) as nro from equipo_comercial as eq
+left join ventas as v on eq.idasesor=v.idasesor
+group by eq.idasesor
+order by nro desc
+limit 1
+)
+#Ventas totales que ha tenido cada asesor comeciar y el número máximo de ventas que ha logrado alguno de ellos
+select eq.idasesor, count(v.idventa) as ventas_totales, ventas_max_asesor(eq.idasesor) as venta_max_asesor from equipo_comercial eq
+left join ventas v on eq.idasesor= v.idasesor
+group by eq.idasesor;
