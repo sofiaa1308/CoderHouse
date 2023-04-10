@@ -240,3 +240,41 @@ INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-0
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-01A2052B',6000,'0064X00002FZLJ8QAH',17555);
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-020BC6B4',15570,'0064X00002Gwe9TQAR',17555);
 INSERT INTO `ventas` (`idventa`, `PRICE_SALE`, `idcar`, `idasesor`) VALUES ('P-0280D059',515,'0064X00002GwEO0QAN',17555);
+
+
+
+##Desafío_vistas
+
+# Vista 1, tabla Stock: nro de leads generados por cada idcar en stock
+CREATE OR REPLACE VIEW v_stock AS
+(
+select distinct s.idcar, count(s.IDCAR) as nro from stock as s
+left join leads as l on s.idcar= l.idcar
+group by s.IDCAR
+order by nro desc);
+
+#Vista 2, tabla equipo_comercial: nro de ventas generadas por cada asesor comercial
+CREATE OR REPLACE VIEW v_equipo_comercial AS
+(
+SELECT eq.idasesor, count(v.idcar) as ventas_por_asesor FROM equipo_comercial as eq
+left join ventas as v on eq.idasesor= v.idasesor
+group by eq.idasesor);
+
+#Vista 3, tabla leads: leads generados por dia
+CREATE OR REPLACE VIEW v_leads as
+(
+SELECT fecha_creacion, count(idcar) 
+FROM leads
+group by fecha_creacion);
+
+#Vista 4, tabla ventas:
+CREATE OR REPLACE VIEW v_ventas as
+(
+select avg(price_sale) from ventas);
+
+#Vista 5, tabla visitas:
+CREATE OR REPLACE VIEW v_visitas as
+(
+select site, count(v.idasesor) as asesores_site from visitas as v
+left join equipo_comercial as eq on v.idasesor= eq.idasesor
+group by site)
