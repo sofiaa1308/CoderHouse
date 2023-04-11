@@ -306,3 +306,59 @@ limit 1
 select eq.idasesor, count(v.idventa) as ventas_totales, ventas_max_asesor(eq.idasesor) as venta_max_asesor from equipo_comercial eq
 left join ventas v on eq.idasesor= v.idasesor
 group by eq.idasesor;
+
+## Desafío Creación de SP
+#Desafío 1
+DROP procedure insertar; 
+
+DELIMITER $$
+CREATE PROCEDURE ordenar(IN site_or, desc)
+begin
+	INSERT INTO visitas(idvisita, site, idasesor) values (nro_visita, lugar, asesor);
+END $$
+DELIMITER ;
+
+call insertar(395,'Ica','17555');
+
+SELECT * FROM VISITAS;
+
+
+#Desafío 2
+
+## Ejercicio 1
+--
+DROP PROCEDURE ordenamiento;
+
+DELIMITER //
+CREATE PROCEDURE ordenamiento (IN site varchar(100), IN orden BOOLEAN)
+--
+BEGIN
+	IF site <>"" AND orden=1 THEN
+		SET @ordenar = concat("order by ", site);
+	ELSEIF site <> "" AND orden=0 THEN
+		SET @ordenar = concat("order by ", site, ' DESC');
+	ELSE
+		SET @ordenar = " ";
+	END IF;
+    SET @clausula_select = concat("SELECT * FROM VISITAS ",@ordenar);
+    PREPARE ejecucion FROM @clausula_select;
+EXECUTE ejecucion;
+DEALLOCATE PREPARE ejecucion;
+END //
+DELIMITER ;
+
+CALL ordenamiento("site",0);
+
+## Ejercicio 2
+DROP procedure insertar; 
+
+DELIMITER $$
+CREATE PROCEDURE insertar(IN nro_visita int, in lugar varchar(100), in asesor varchar(100))
+begin
+	INSERT INTO visitas(idvisita, site, idasesor) values (nro_visita, lugar, asesor);
+END $$
+DELIMITER ;
+
+call insertar(395,'Ica','17555');
+
+SELECT * FROM VISITAS;
