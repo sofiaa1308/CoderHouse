@@ -323,7 +323,7 @@ call insertar(395,'Ica','17555');
 SELECT * FROM VISITAS;
 
 
-#Desafío 2
+#Desafío SCRIPT DE CREACIÓN DE STORED PROCEDURES
 
 ## Ejercicio 1
 --
