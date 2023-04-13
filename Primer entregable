@@ -362,3 +362,92 @@ DELIMITER ;
 call insertar(395,'Ica','17555');
 
 SELECT * FROM VISITAS;
+
+
+##Trigger_PRUEBA
+CREATE TABLE new_equipo_comercial(
+idasesor int primary key,
+fecha_ingreso date);
+
+CREATE TRIGGER tr_add_new_equipo_comercial
+after insert on equipo_comercial
+for each row
+insert into new_equipo_comercial(idasesor, fecha_ingreso) values (new.idasesor, new.fecha_ingreso);
+
+select * from equipo_comercial;
+select * from new_equipo_comercial;
+
+insert into equipo_comercial (idasesor, fecha_ingreso)
+values (2345,'2023-03-12');
+
+##Trigger 1
+
+select * from visitas;
+create table metrica(visitas_totales int);
+
+drop trigger contar_visitas_delete;
+
+DELIMITER $$
+CREATE TRIGGER contar_visitas_delete
+after delete on visitas
+for each row
+begin
+	declare visitas_s int;
+    delete from metrica;
+    set visitas_s = (select count(*) from visitas);
+    insert into metrica values (visitas_s);
+end $$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER contar_visitas_insert
+after insert on visitas
+for each row
+begin
+	declare visitas_s int;
+    delete from metrica;
+    set visitas_s = (select count(*) from visitas);
+    insert into metrica values (visitas_s);
+end $$
+DELIMITER ;
+
+
+SELECT count(*) from visitas;
+select * from metrica;
+
+drop trigger validar_site;
+
+DELIMITER $$
+CREATE TRIGGER validar_site
+BEFORE INSERT ON visitas
+FOR EACH ROW
+BEGIN
+	IF NEW.site = 'Arequipa' or new.site ='Puno' THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Site no válido';
+    end if;
+END $$
+DELIMITER ;
+
+INSERT INTO visitas VALUES
+(258,'Tacna',11170);
+
+delete from visitas where idvisita=258;
+
+select * from visitas;
+select * from metrica;
+
+##Trigger 2
+drop trigger ventas_audit_insert;
+Create table ventas_audit (idventa VARCHAR(55), user varchar(100), fecha date , hora timestamp);
+
+CREATE TRIGGER ventas_audit_insert
+AFTER INSERT ON ventas
+FOR EACH ROW
+	INSERT INTO ventas_audit VALUES (NEW.idventa, USER(), current_date(), CURRENT_TIMESTAMP());
+    
+SELECT * FROM ventas;
+
+INSERT INTO ventas (idventa, PRICE_SALE, idcar, idasesor)
+VALUES ('P-003C8XXXX',8000,'0064X00002GvlefQAB',16583);
+
+SELECT * FROM ventas_audit;
