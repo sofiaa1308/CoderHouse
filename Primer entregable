@@ -1,6 +1,7 @@
 create schema if not exists	tablas_proyecto_final;
 use tablas_proyecto_final;
 
+##Tabla1
 CREATE TABLE STOCK (
 IDCAR varchar(100),
 COLOR VARCHAR(50) NOT NULL,
@@ -64,6 +65,7 @@ INSERT INTO `stock` (`IDCAR`, `COLOR`, `TRANSMISION`) VALUES ('0064X00002Gx7KMQA
 /*drop table stock;*/
 select * from stock;
 
+##Tabla2
 CREATE TABLE LEADS (
 idlead varchar(100),
 idcar varchar(100),
@@ -178,6 +180,7 @@ INSERT INTO `leads` (`idlead`, `idcar`, `fecha_creacion`) VALUES ('700','0064X00
 select * from leads;
 drop table leads;
 
+##Tabla3
 CREATE TABLE EQUIPO_COMERCIAL (
 idasesor INT,
 FECHA_INGRESO DATE,
@@ -194,6 +197,7 @@ INSERT INTO `equipo_comercial` (`idasesor`, `FECHA_INGRESO`) VALUES (17555,'2023
 select * from equipo_comercial;
 drop table equipo_comercial;
 
+##Tabla4
 CREATE TABLE VISITAS (
 idvisita INT,
 site VARCHAR(50),
@@ -213,6 +217,7 @@ INSERT INTO `visitas` (`idvisita`, `site`, `idasesor`) VALUES (381,'Lima',17555)
 select * from visitas;
 drop table visitas;
 
+##Tabla5
 CREATE TABLE VENTAS (
 idventa varchar(55),
 PRICE_SALE FLOAT,
@@ -280,7 +285,7 @@ group by site)
 
 #Desafío funciones
 
-#Función 1
+#Función1: Modela el campo transmisión de la tabla stock
 DROP FUNCTION modelar;
 CREATE FUNCTION modelar (valor VARCHAR(100))
 RETURNS VARCHAR(100)
@@ -289,7 +294,7 @@ RETURN(REPLACE(valor,'Ã¡','a'));
 
 select modelar(transmision) from stock;
 
-#Función 2
+#Función 2: Indica el nro de ventas máximo que obtuvo cada asesor comercial
 drop function ventas_max_asesor;
 
 CREATE FUNCTION ventas_max_asesor (valorf INT)
@@ -307,7 +312,7 @@ select eq.idasesor, count(v.idventa) as ventas_totales, ventas_max_asesor(eq.ida
 left join ventas v on eq.idasesor= v.idasesor
 group by eq.idasesor;
 
-## Desafío Creación de SP
+## Desafío Creación de Stored Procedures
 #Desafío 1
 DROP procedure insertar; 
 
@@ -364,7 +369,7 @@ call insertar(395,'Ica','17555');
 SELECT * FROM VISITAS;
 
 
-##Trigger_PRUEBA
+##Trigger_0
 CREATE TABLE new_equipo_comercial(
 idasesor int primary key,
 fecha_ingreso date);
@@ -451,3 +456,54 @@ INSERT INTO ventas (idventa, PRICE_SALE, idcar, idasesor)
 VALUES ('P-003C8XXXX',8000,'0064X00002GvlefQAB',16583);
 
 SELECT * FROM ventas_audit;
+
+##Trigger 3
+
+CREATE TABLE log_ventas (
+id int unsigned NOT NULL AUTO_INCREMENT,
+accion varchar (50) not null,
+usuario varchar (45) not null,
+fecha datetime not null,
+primary key (id))
+
+DROP TRIGGER log_after_ventas;
+--LOG DE INSERCION
+DELIMITER $$
+CREATE TRIGGER log_after_ventas
+AFTER INSERT ON ventas
+FOR EACH ROW
+BEGIN
+
+INSERT INTO log_ventas (id, accion, usuario, fecha)
+values
+(NULL, 'INSERT', SYSTEM_USER(), now());
+
+END $$
+DELIMITER ;
+
+SELECT * FROM log_ventas;
+select * from ventas;
+
+INSERT INTO ventas (idventa, PRICE_SALE, idcar, idasesor)
+VALUES ('P-4XXXXX',8000,'0064X00002FZ9CZQA1',16583);
+
+##Trigger 4
+DROP TRIGGER log_before_delete_ventas;
+
+DELIMITER $$
+CREATE TRIGGER log_before_delete_ventas
+BEFORE DELETE ON ventas
+FOR EACH ROW
+BEGIN
+INSERT INTO log_ventas (id, accion, usuario, fecha)
+VALUES (NULL, 'DELETE', system_user(), now());
+
+END $$
+DELIMITER ;
+
+INSERT INTO ventas (idventa, PRICE_SALE, idcar, idasesor)
+VALUES ('P-5XXXXX',8000,'0064X00002GvsLRQAZ',16583);
+
+delete from ventas where idventa='P-5XXXXX';
+SELECT * FROM log_ventas;
+select * from ventas;
