@@ -507,3 +507,35 @@ VALUES ('P-5XXXXX',8000,'0064X00002GvsLRQAZ',16583);
 delete from ventas where idventa='P-5XXXXX';
 SELECT * FROM log_ventas;
 select * from ventas;
+
+##Desafío sentencia del sublenguaje TCL
+##Ejercicio_1
+select * from visitas;
+
+select @@autocommit;
+
+set autocommit=0;
+
+start transaction; 
+delete from visitas
+where idvisita=3456;
+
+rollback;
+commit;
+
+##Ejercicio_2
+start transaction;
+insert into visitas (idvisita,site,idasesor) values (456,'lima',13019)
+insert into visitas (idvisita,site,idasesor) values (987,'lima',16583)
+insert into visitas (idvisita,site,idasesor) values (653,'lima',13019)
+insert into visitas (idvisita,site,idasesor) values (444,'lima',13019)
+savepoint lote1;
+insert into visitas (idvisita,site,idasesor) values (777,'lima',13019)
+insert into visitas (idvisita,site,idasesor) values (888,'lima',16583)
+insert into visitas (idvisita,site,idasesor) values (999,'lima',13019)
+insert into visitas (idvisita,site,idasesor) values (123,'lima',16583)
+savepoint lote2;
+
+rollback to lote1;
+
+select * from visitas;
