@@ -536,7 +536,7 @@ grant select, update, insert on tablas_proyecto_final.visitas to usuarioconpermi
 
 show grants for usuarioconpermisos@localhost;
 
-##Desafío sentencia del sublenguaje DCL
+##Desafío sentencia del sublenguaje TCL
 ##Ejercicio_1
 select * from visitas;
 
