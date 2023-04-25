@@ -508,7 +508,35 @@ delete from ventas where idventa='P-5XXXXX';
 SELECT * FROM log_ventas;
 select * from ventas;
 
-##Desafío sentencia del sublenguaje TCL
+## Desafío sublenguaje DCL
+CREATE USER usuariolectura@localhost identified by '1234';
+create user usuarioconpermisos@localhost identified by '12345';
+
+select * from mysql.user where user='usuariolectura';
+select * from mysql.user where user='usuarioconpermisos';
+
+-- Asignar permisos
+
+-- Lectura
+grant select on tablas_proyecto_final.equipo_comercial to usuariolectura@localhost;
+grant select on tablas_proyecto_final.leads to usuariolectura@localhost;
+grant select on tablas_proyecto_final.stock to usuariolectura@localhost;
+grant select on tablas_proyecto_final.ventas to usuariolectura@localhost;
+grant select on tablas_proyecto_final.visitas to usuariolectura@localhost;
+
+-- Verifico los permisos otorgado
+show grants for usuariolectura@localhost;
+
+-- Permisos de lectura, insert y update para usuariocon permisos
+grant select, update, insert on tablas_proyecto_final.equipo_comercial to usuarioconpermisos@localhost;
+grant select, update, insert on tablas_proyecto_final.leads to usuarioconpermisos@localhost;
+grant select, update, insert on tablas_proyecto_final.stock to usuarioconpermisos@localhost;
+grant select, update, insert on tablas_proyecto_final.ventas to usuarioconpermisos@localhost;
+grant select, update, insert on tablas_proyecto_final.visitas to usuarioconpermisos@localhost;
+
+show grants for usuarioconpermisos@localhost;
+
+##Desafío sentencia del sublenguaje DCL
 ##Ejercicio_1
 select * from visitas;
 
